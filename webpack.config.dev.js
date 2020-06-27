@@ -75,10 +75,10 @@ const plugins = [
 
 const devServer = {
   compress: true,
-  watchContentBase: true,
+  watchContentBase: false,
   progress: true,
   open: true,
-  hot: true,
+  hot: false,
   disableHostCheck: true,
   host: 'localhost',
   port: 9030,
