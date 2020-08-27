@@ -94,6 +94,10 @@ const devServer = {
   }
 }
 
+const externals = {
+  axios: 'axios'
+};
+
 module.exports = {
   mode: 'development', // 打包模式 development || production
   entry: entryIndex, // 入口文件
@@ -102,4 +106,5 @@ module.exports = {
   module: webpackModule,
   plugins,
   devServer,
+  externals,
 }

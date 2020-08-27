@@ -82,6 +82,10 @@ const optimization = {
   },
 }
 
+const externals = {
+  axios: 'axios'
+};
+
 module.exports = {
   mode: 'production', // 打包模式 development || production
   entry: entryIndex, // 入口文件
@@ -89,5 +93,6 @@ module.exports = {
   resolve,
   module: webpackModule,
   plugins,
-  optimization
+  optimization,
+  externals,
 }

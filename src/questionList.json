@@ -1,0 +1,320 @@
+[
+  {
+    "title": "您从事哪一方面的工作？",
+    "choice": 1,
+    "options": [
+      {
+        "text": "A 金融/房地产行业",
+        "selected": false
+      },
+      {
+        "text": "B 医疗/教育/法律行业",
+        "selected": false
+      },
+      {
+        "text": "C 互联网行业",
+        "selected": false
+      },
+      {
+        "text": "D 时尚行业",
+        "selected": false
+      },
+      {
+        "text": "E 影视/艺术行业",
+        "selected": false
+      },
+      {
+        "text": "F 私营业主/自由职业者",
+        "selected": false
+      },
+      {
+        "text": "G 事业单位/公务员",
+        "selected": false
+      }
+    ]
+  },
+  {
+    "title": "您的兴趣爱好？（多选）",
+    "choice": 0,
+    "options": [
+      {
+        "text": "A 美容/保养",
+        "selected": false
+      },
+      {
+        "text": "B 时尚潮流/服饰穿搭",
+        "selected": false
+      },
+      {
+        "text": "C 旅行",
+        "selected": false
+      },
+      {
+        "text": "D 乐器/舞蹈",
+        "selected": false
+      },
+      {
+        "text": "E 电影/电视剧/明星娱乐",
+        "selected": false
+      },
+      {
+        "text": "F 子女教育/自我进修",
+        "selected": false
+      },
+      {
+        "text": "G 运动/健身",
+        "selected": false
+      },
+      {
+        "text": "H 社交休闲娱乐",
+        "selected": false
+      },
+      {
+        "text": "I 美食",
+        "selected": false
+      }
+    ]
+  },
+  {
+    "title": "哪种着装场景，是您购买我们品牌服装的重要因素?",
+    "choice": 1,
+    "options": [
+      {
+        "text": "A 商务约见",
+        "selected": false
+      },
+      {
+        "text": "B 社交宴会",
+        "selected": false
+      },
+      {
+        "text": "C 日常工作",
+        "selected": false
+      },
+      {
+        "text": "D 休闲约会",
+        "selected": false
+      },
+      {
+        "text": "E 旅行度假",
+        "selected": false
+      }
+    ]
+  },
+  {
+    "title": "上一题选择的着装场景，您更喜欢哪一种风格打扮?",
+    "choice": 1,
+    "options": [
+      {
+        "text": "A 知性大方",
+        "selected": false
+      },
+      {
+        "text": "B 甜美淑女",
+        "selected": false
+      },
+      {
+        "text": "C 浪漫优雅",
+        "selected": false
+      },
+      {
+        "text": "D 时尚干练",
+        "selected": false
+      },
+      {
+        "text": "E 少女感",
+        "selected": false
+      },
+      {
+        "text": "F 潮流复古",
+        "selected": false
+      },
+      {
+        "text": "G 前卫个性 ",
+        "selected": false
+      },
+      {
+        "text": "H 无固定",
+        "selected": false
+      }
+    ]
+  },
+  {
+    "title": "您对奢侈类/轻奢类服装品牌有什么购买诉求?",
+    "choice": 1,
+    "options": [
+      {
+        "text": "A 限量定制，彰显身份地位",
+        "width": "100%",
+        "selected": false
+      },
+      {
+        "text": "B 独特设计，明星潮流热捧",
+        "width": "100%",
+        "selected": false
+      },
+      {
+        "text": "C 品牌的辨识度强，特定场合需要",
+        "width": "100%",
+        "selected": false
+      },
+      {
+        "text": "D 超高性价比或偶然打折",
+        "width": "100%",
+        "selected": false
+      },
+      {
+        "text": "E 没有购买需求",
+        "width": "100%",
+        "selected": false
+      }
+    ]
+  },
+  {
+    "title": "您日常关注服装潮流资讯的途径有哪些？（可选1-3项）",
+    "choice": 3,
+    "options": [
+      {
+        "text": "A 微博",
+        "selected": false
+      },
+      {
+        "text": "B 小红书",
+        "selected": false
+      },
+      {
+        "text": "C 抖音",
+        "selected": false
+      },
+      {
+        "text": "D 微信公众号",
+        "selected": false
+      },
+      {
+        "text": "E 线下实体广告（杂志、橱窗展示",
+        "width": "100%",
+        "selected": false
+      },
+      {
+        "text": "F 线下品牌活动",
+        "selected": false
+      },
+      {
+        "text": "G 其他",
+        "selected": false
+      }
+    ]
+  },
+  {
+    "title": "您之后是否会尝试/或继续在我们品牌小程序微店上购买衣服？",
+    "choice": 1,
+    "options": [
+      {
+        "text": "A 会",
+        "selected": false
+      },
+      {
+        "text": "B 不会",
+        "selected": false
+      }
+    ]
+  },
+  {
+    "title": "您觉得，我们品牌小程序增加以下哪些内容会更好？",
+    "choice": 1,
+    "options": [
+      {
+        "text": "A 个性化的商品推荐",
+        "selected": false
+      },
+      {
+        "text": "B 趣味的游戏互动",
+        "selected": false
+      },
+      {
+        "text": "C 专属性的优惠福利",
+        "selected": false
+      },
+      {
+        "text": "D 更多精选搭配",
+        "selected": false
+      },
+      {
+        "text": "E 买家秀展示",
+        "selected": false
+      }
+    ]
+  },
+  {
+    "title": "您在小红书/微信/微博等社交平台，喜欢关注哪方面内容？（多选）",
+    "choice": 0,
+    "options": [
+      {
+        "text": "A 美食",
+        "selected": false
+      },
+      {
+        "text": "B 时尚/服装",
+        "selected": false
+      },
+      {
+        "text": "C 美容/美妆",
+        "selected": false
+      },
+      {
+        "text": "D 家居或生活用品",
+        "selected": false
+      },
+      {
+        "text": "E 健身或养生类",
+        "selected": false
+      },
+      {
+        "text": "F 亲子或教育类",
+        "selected": false
+      },
+      {
+        "text": "G 成长或生活哲学类",
+        "selected": false
+      },
+      {
+        "text": "H 其他",
+        "selected": false
+      }
+    ]
+  },
+  {
+    "title": "您观看直播的主要原因是？",
+    "choice": 1,
+    "options": [
+      {
+        "text": "A 看到上身试穿效果",
+        "selected": false
+      },
+      {
+        "text": "B 学到搭配建议",
+        "selected": false
+      },
+      {
+        "text": "C 产品价格更优惠",
+        "selected": false
+      },
+      {
+        "text": "D 喜欢主播的直播风格",
+        "selected": false
+      },
+      {
+        "text": "E 直播抽奖礼",
+        "selected": false
+      },
+      {
+        "text": "F 没有时间看直播",
+        "selected": false
+      },
+      {
+        "text": "G 从不看直播",
+        "selected": false
+      }
+    ]
+  }
+]
