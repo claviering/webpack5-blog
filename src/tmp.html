@@ -392,23 +392,17 @@ let app = function (isLogin) {
       doc.addEventListener('DOMContentLoaded', recalc, false);
     })(document, window);
   }
-  function updataQuestion(index, questionList) {
+  function updateQuestion(index, questionList) {
     let questionDomList = document.querySelectorAll('.question-content');
-    let questionOptionDom = questionDomList[index].querySelector('.question-options');
-    let optionList = '';
+    let questionItemDomList = questionDomList[index].querySelectorAll('.question-options > .question-item ');
     let item = questionList[index];
     item.options.forEach((option, optionIndex) => {
-      let activeClass = option.selected ? 'active' : '';
-      optionList = optionList + `<div 
-          class="question-item ${activeClass}"
-          data-index="${index}"
-          data-choice="${item.choice}"
-          data-choice-index="${optionIndex}"
-          style="width: ${option.width || ''}">
-          ${option.text}
-        </div>`
+      if (option.selected) {
+        questionItemDomList[optionIndex].classList.add('active');
+      } else {
+        questionItemDomList[optionIndex].classList.remove('active');
+      }
     });
-    questionOptionDom.innerHTML = optionList;
   }
   function initSelectEven(clickDomClass) {
     let clickDom = document.querySelector(clickDomClass);
@@ -453,7 +447,7 @@ let app = function (isLogin) {
         });
       }
       questionList = JSON.parse(JSON.stringify(questionList))
-      updataQuestion(index, questionList);
+      updateQuestion(index, questionList);
     }
   }
   function toastShow(text) {
