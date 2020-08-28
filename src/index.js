@@ -68,6 +68,7 @@ let app = function (isLogin, hasSubmit) {
   }
   function initSelectEven(clickDomClass) {
     let clickDom = document.querySelector(clickDomClass);
+    if (hasSubmit) return;
     clickDom.onclick = function (e) {
       if (!isLogin) {
         window.location = loginUrl;
