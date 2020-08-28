@@ -1,8 +1,7 @@
 import './index.less';
 import questionList from './questionList.json';
 
-let app = function (isLogin) {
-  let hasSubmit = false;
+let app = function (isLogin, hasSubmit) {
   let loginUrl = 'http://fun.trendy.invcloud.cn/trendyoch/index.php/home/actdhmembercard/index/actstr/20200828';
   let postUrl = 'http://fun.trendy.invcloud.cn/trendyoch/index.php/home/actcg20200828//ajaxAnswers';
   this.initDom = function (appId, questionList) {
@@ -31,10 +30,11 @@ let app = function (isLogin) {
         </div>
       </div>`
     });
+    let submit = hasSubmit ? '' : '<div class="submit">提交</div>';
     app.innerHTML = `<div class="preference-research">
       <div class="preference-research-content">
         ${domList}
-        <div class="submit">提交</div>
+        ${submit}
       </div>
     </div>`;
     initSelectEven('.preference-research');
@@ -136,6 +136,7 @@ let app = function (isLogin) {
   }
   function initSubmitEven(submitClass) {
     let clickDom = document.querySelector(submitClass);
+    if (!clickDom) return;
     clickDom.onclick = function () {
       let text = '问卷已提交，谢谢！';
       if (hasSubmit) {
@@ -172,5 +173,6 @@ let app = function (isLogin) {
   rem(document, window);
 }
 let isLogin = true;
-let App = new app(isLogin);
+let hasSubmit = true;
+let App = new app(isLogin, hasSubmit);
 App.initDom('preferenceResearch', questionList)
