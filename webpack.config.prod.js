@@ -30,7 +30,7 @@ const webpackModule = {
       use: [MiniCssExtractPlugin.loader, {loader: 'css-loader', options: {importLoaders: 1}}, 'postcss-loader', 'less-loader']
     },
     {
-      test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+      test: /\.(png|jpe?g|gif|svg)(\?.*)?$/i,
       use: [{
         loader: 'url-loader',
         options: {
@@ -40,9 +40,9 @@ const webpackModule = {
       }]
     },
     {
-      test: /\.(woff|eot|ttf|svg|gif)$/,
+      test: /\.(woff|woff2|eot|ttf|otf)$/i,
       use: [{
-        loader: 'url-loader',
+        loader: 'file-loader',
         options: {
           limit: 8192,
           name: 'font/[name].[hash:7].[ext]'

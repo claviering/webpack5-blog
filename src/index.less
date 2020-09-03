@@ -1,3 +1,8 @@
+@supports (object-fit: contain) {
+  img {
+    object-fit: contain;
+  }
+}
 .image-content{
   display: flex;
   justify-content: space-around;
@@ -9,5 +14,14 @@
       height: 200px;
       margin-bottom: 100px;
     }
+  }
+  img:not([data-isLoaded]){
+    height: 200px;
+    width: 200px;
+    background-color: #eeedeb;
+    background-size: 22px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url('./public/image/image-loading.gif');
   }
 }

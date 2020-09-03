@@ -5,6 +5,6 @@ import {
   observer,
 } from './lib/image-lazy-loading ';
 
-// offsetLazyLoading({imageContentId: 'offset'});
+offsetLazyLoading({imageContentId: 'offset'});
 // boundingClientRect({imageContentId: 'boundingClientRect'});
-observer({imageContentId: 'observer'});
+// observer({imageContentId: 'observer'});
