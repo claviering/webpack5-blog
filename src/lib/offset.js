@@ -13,10 +13,10 @@ function offsetLazyLoading(config) {
   //加载图片
   function loadImg(dom) {
     dom.src = dom.getAttribute('data-src');
-    dom.setAttribute('data-isLoaded', 1);
+    dom.setAttribute('data-loaded', 1);
   }
   function init() {
-    let imgList = document.querySelectorAll(`#${imageContentId} img:not([data-isLoaded])`);
+    let imgList = document.querySelectorAll(`#${imageContentId} img:not([data-loaded])`);
     imgList.forEach(image => {
       if (isShow(image)) {
         loadImg(image);
