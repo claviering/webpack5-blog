@@ -1,0 +1,25 @@
+.image-content{
+  display: flex;
+  justify-content: space-around;
+  .col{
+    display: flex;
+    flex-direction: column;
+    &>img{
+      width: 200px;
+      height: 200px;
+      margin-bottom: 100px;
+      @supports (object-fit: contain) {
+        object-fit: contain;
+      }
+    }
+  }
+  img:not([data-loaded]){
+    height: 200px;
+    width: 200px;
+    background-color: #eeedeb;
+    background-size: 22px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url('./public/image/image-loading.gif');
+  }
+}
