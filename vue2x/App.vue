@@ -1,16 +1,26 @@
 <template>
-  <div class="app">
-    <h1>app app</h1>
+  <div class="app" >
+    <h1 v-touch="touchHandler">app1</h1>
+    <h1 v-touch="touchHandler">app2</h1>
   </div>
 </template>
 <script>
 export default {
-  data () {
+  data() {
     return {
-      number: 10
+      left: '2000'
+    }
+  },
+  methods: {
+    touchHandler(direction, e) {
+      console.log('direction', direction);
     }
   },
 }
 </script>
 <style lang="less" scoped>
+html, body{
+  padding: 0px;
+  margin: 0px;
+}
 </style>

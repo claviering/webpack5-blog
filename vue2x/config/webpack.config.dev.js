@@ -4,12 +4,12 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 // const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 
 const PROJECT_NAME = 'vue2x';
-const contentBase = __dirname + `/${PROJECT_NAME}`
-const entryIndex = __dirname + `/${PROJECT_NAME}/index.js`
-const htmlTemplete = __dirname + `/${PROJECT_NAME}/index.html`
+const contentBase = `/${PROJECT_NAME}`
+const entryIndex = `/${PROJECT_NAME}/index.js`
+const htmlTemplete = `/${PROJECT_NAME}/index.html`
 
 const output = {
-  path: __dirname + '/dist',
+  path: '/dist',
   filename: 'bundle.[hash:7].js',
   chunkFilename: 'chunks/[name].[hash:7].js',
 }
