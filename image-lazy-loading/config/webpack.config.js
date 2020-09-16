@@ -1,7 +1,7 @@
 const path = require("path");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const contentBase = __dirname + `/src`
+const contentBase = `/image-lazy-loading`
 const resolve = {
   extensions: ['.vue', '.less', '.css', '.js', '.jsx', '.ts'], // 忽略文件后缀
   modules: ['node_modules'], // 指定包的目录
@@ -53,11 +53,11 @@ const webpackModule = {
 
 module.exports = {
   mode: "production",
-  entry: "./src/index.js",
+  entry: "./image-lazy-loading/index.js",
   module: webpackModule,
   resolve,
   output: {
-    path: path.resolve(__dirname, "lib"),
+    path: path.resolve("image-lazy-loading/dist/"),
     filename: "image-lazy-loading.js",
     library: "imageLazyLoading", // 在全局变量中增加一个library变量
     libraryTarget: "umd"

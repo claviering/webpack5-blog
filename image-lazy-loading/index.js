@@ -3,7 +3,7 @@ import {
   offsetLazyLoading,
   boundingClientRect,
   observer,
-} from './lib/image-lazy-loading';
+} from '/lib/image-lazy-loading';
 
 export function init(imageContentId) {
   if (IntersectionObserver) {

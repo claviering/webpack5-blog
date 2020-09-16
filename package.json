@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "webpack-dev-server --config ./webpack.config.dev.js",
     "lib": "webpack --config ./webpack.config.lib.js",
-    "build": "webpack --config ./webpack.config.prod.js"
+    "build": "webpack --config ./webpack.config.prod.js",
+    "image-lazy-loading": "webpack --config image-lazy-loading/config/webpack.config.js "
   },
   "keywords": [],
   "author": "",
