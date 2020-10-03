@@ -1,0 +1,34 @@
+@scale: 10; // 大图放大倍数
+@imgWidth: 3840px; // 图片宽度
+@imgHeight: 2160px; // 图片高度
+@maxWidth: 500px; // 大图显示宽度
+@maxHeight: 500px; // 大图显示高度
+.min{
+  display: inline-block;
+  position: relative;
+  img{
+    width: @imgWidth / @scale;
+    height: @imgHeight / @scale;
+    display: inline-block;
+  }
+  .modal{
+    width: @maxWidth / @scale;
+    height: @maxHeight / @scale;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+  }
+  &:hover ~ .max{
+    visibility: visible;
+  }
+}
+.max{
+  width: @maxWidth;
+  height: @maxHeight;
+  display: inline-block;
+  overflow: hidden;
+  visibility: hidden;
+}
