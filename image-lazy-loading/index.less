@@ -4,7 +4,14 @@
   .col{
     display: flex;
     flex-direction: column;
-    &>img{
+    .img-box{
+      position: relative;
+      margin-bottom: 100px;
+      width: 200px;
+      height: 200px;
+    }
+    .data-img{
+      position: absolute;
       width: 200px;
       height: 200px;
       margin-bottom: 100px;
@@ -13,13 +20,14 @@
       }
     }
   }
-  img:not([data-loaded]){
+  .data-img:not([data-loaded]) ~ .loading {
+    position: absolute;
     height: 200px;
     width: 200px;
     background-color: #eeedeb;
     background-size: 22px;
     background-position: center center;
     background-repeat: no-repeat;
-    background-image: url('./public/image/image-loading.gif');
+    background-image: url('https://static01.imgkr.com/temp/1a29089e2937472195d2345ffed656aa.gif');
   }
 }

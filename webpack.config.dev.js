@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 // const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 
-const PROJECT_NAME = 'Nike-tabs-animation';
+const PROJECT_NAME = 'image-lazy-loading';
 const contentBase = __dirname + `/${PROJECT_NAME}`
 const entryIndex = __dirname + `/${PROJECT_NAME}/index.js`
 const htmlTemplete = __dirname + `/${PROJECT_NAME}/index.html`

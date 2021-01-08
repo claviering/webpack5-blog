@@ -13,10 +13,12 @@ function boundingClientRect(config) {
   //加载图片
   function loadImg(dom) {
     dom.src = dom.getAttribute('data-src');
-    dom.setAttribute('data-loaded', 1);
+    dom.onload = function () {
+      dom.setAttribute('data-loaded', 1);
+    }
   }
   function init() {
-    let imgList = document.querySelectorAll(`#${imageContentId} img:not([data-loaded])`);
+    let imgList = document.querySelectorAll(`#${imageContentId} .data-img:not([data-loaded])`);
     imgList.forEach(image => {
       if (isShow(image)) {
         loadImg(image);

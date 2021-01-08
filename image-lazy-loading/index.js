@@ -1,16 +1,16 @@
-// import './index.less';
-import {
-  offsetLazyLoading,
-  boundingClientRect,
-  observer,
-} from '/lib/image-lazy-loading';
+import './index.less';
+import observer from './lib/observer';
+import boundingClientRect from './lib/boundingClientRect';
+import offsetLazyLoading from './lib/offset';
 
-export function init(imageContentId) {
-  if (IntersectionObserver) {
+function init(imageContentId) {
+  if (false && IntersectionObserver) {
     observer({imageContentId});
-  } else if (document && document.querySelector("body").getBoundingClientRect) {
+  } else if (false && document && document.querySelector("body").getBoundingClientRect) {
     boundingClientRect({imageContentId});
   } else {
     offsetLazyLoading({imageContentId});
   }
 }
+
+init('image-loading')

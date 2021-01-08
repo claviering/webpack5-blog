@@ -12,11 +12,15 @@ function offsetLazyLoading(config) {
   }
   //加载图片
   function loadImg(dom) {
-    dom.src = dom.getAttribute('data-src');
-    dom.setAttribute('data-loaded', 1);
+    let imgdom = dom.querySelector('.data-img');
+    imgdom.src = imgdom.getAttribute('data-src');
+    imgdom.onload = function () {
+      imgdom.setAttribute('data-loaded', 1);
+      dom.setAttribute('data-loaded', 1);
+    }
   }
   function init() {
-    let imgList = document.querySelectorAll(`#${imageContentId} img:not([data-loaded])`);
+    let imgList = document.querySelectorAll(`#${imageContentId} .img-box:not([data-loaded])`);
     imgList.forEach(image => {
       if (isShow(image)) {
         loadImg(image);
