@@ -4,9 +4,9 @@ import boundingClientRect from './lib/boundingClientRect';
 import offsetLazyLoading from './lib/offset';
 
 function init(imageContentId) {
-  if (false && IntersectionObserver) {
+  if (IntersectionObserver) {
     observer({imageContentId});
-  } else if (false && document && document.querySelector("body").getBoundingClientRect) {
+  } else if (document && document.querySelector("body").getBoundingClientRect) {
     boundingClientRect({imageContentId});
   } else {
     offsetLazyLoading({imageContentId});
