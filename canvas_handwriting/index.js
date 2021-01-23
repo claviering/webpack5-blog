@@ -41,11 +41,11 @@ import "./index.less"
 })()
 
 async function predict(canvasElement) {
-  const example = await tf.browser.fromPixels(canvasElement, 1).data();
-  // .resizeNearestNeighbor([28, 28])
-  // .toFloat()
-  // .div(255.0)
-  // .reshape([1, 28, 28, 1]);
+  const example = await tf.browser.fromPixels(canvasElement, 1)
+  .resizeNearestNeighbor([28, 28])
+  .toFloat()
+  .div(255.0)
+  .reshape([1, 28, 28, 1]);
   console.log('example', example);
   console.log('example.shape', example.shape);
   const prediction = await window.model.predict(example).data();
