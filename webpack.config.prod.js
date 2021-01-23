@@ -7,6 +7,7 @@ const entryIndex = __dirname + `/src/index.js`
 const htmlTemplete = __dirname + `/src/index.html`
 
 const output = {
+  module: true,
   path: __dirname + '/dist',
   filename: 'bundle.[hash:7].js',
   chunkFilename: 'chunks/[name].[hash:7].js',
@@ -23,7 +24,8 @@ const resolve = {
 const webpackModule = {
   rules: [{
       test: /\.js[x]?$/,
-      use: ['babel-loader']
+      use: ['babel-loader'],
+      exclude: /node_modules/,
     },
     {
       test: /\.less$/,
@@ -83,9 +85,13 @@ const optimization = {
 }
 
 module.exports = {
+  target: ['web', 'es2017'],
   mode: 'production', // 打包模式 development || production
   entry: entryIndex, // 入口文件
   output, // 打包输出文件目录
+  experiments: {
+    outputModule: true,
+  },
   resolve,
   module: webpackModule,
   plugins,
