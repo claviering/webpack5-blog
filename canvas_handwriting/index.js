@@ -1,6 +1,9 @@
 import "./index.less"
 
 (function () {
+  let init = true;
+  let loading = false;
+  let resultElement = document.getElementById("result")
   //获得画布元素
   var canvas = document.getElementById("canvas");
   //获得二维绘图对象
@@ -20,14 +23,35 @@ import "./index.less"
       document.onmouseup = null;
     };
   };
+  canvas.ontouchstart = function (e) {
+    if (e.target == canvas) {
+      e.preventDefault();
+    }
+    var e = e && e.touches[0];
+    ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+    document.ontouchmove = function (e) {
+      var e = e && e.touches[0];
+      ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+      ctx.stroke();
+    };
+    document.ontouchend = function (e) {
+      if (e.target == canvas) {
+        e.preventDefault();
+      }
+      document.touchmove = null;
+      document.touchend = null;
+    };
+  };
   //画板初始化
   function initCanvas() {
-    canvas.width = window.innerWidth - 40;
-    canvas.height = window.innerHeight - 400;
+    canvas.width = 300;
+    canvas.height = 300;
+    canvas.style.backgroundColor = 'black';
     //设置线宽
-    ctx.lineWidth = '2';
+    ctx.lineWidth = '10';
     //线条颜色
-    ctx.strokeStyle = 'black';
+    ctx.strokeStyle = 'white';
+    ctx.lineJoin = 'round';
   }
 
   let resetDom = document.getElementById("reset")
@@ -36,29 +60,40 @@ import "./index.less"
   }
   let submitDom = document.getElementById("submit")
   submitDom.onclick = function () {
-    predict(canvas)
+    if (init || loading) return;
+    predict()
   }
-})()
+  async function predict() {
+    loading = true;
+    const example = await tf.browser.fromPixels(canvas, 1)
+    .resizeNearestNeighbor([28, 28])
+    .toFloat()
+    .div(255.0)
+    .reshape([1, 28, 28, 1]);
+    const prediction = await window.model.predict(example).data();
+    var results = Array.from(prediction);
+    loading = false;
+    format(results)
+  }
 
-async function predict(canvasElement) {
-  const example = await tf.browser.fromPixels(canvasElement, 1)
-  .resizeNearestNeighbor([28, 28])
-  .toFloat()
-  .div(255.0)
-  .reshape([1, 28, 28, 1]);
-  console.log('example', example);
-  console.log('example.shape', example.shape);
-  const prediction = await window.model.predict(example).data();
-  var results = Array.from(prediction);
-  console.log('results', results);
-  let index = results.indexOf(Math.max(...results));
-  console.log('index', index, Math.max(...results));
-}
+  function format(results) {
+    let list = results.map((item, index) => ({
+      index: index,
+      cred: (item * 100).toFixed(2)
+    }))
+    list = list.sort((a,b) => (a.cred < b.cred) ? 1 : ((b.cred < a.cred) ? -1 : 0))
+    let bodyDom = document.querySelectorAll('.result')
+    list.forEach((item, index) => {
+      bodyDom[index].innerHTML = `识别结果: ${item.index} 可信度: ${item.cred}%`;
+    })
 
-async function initModel() {
-  console.log('loading model...');
-  window.model = await tf.loadLayersModel('http://localhost:9030/dist/model.json');
-  console.log('load model');
+  }
   
-}
-initModel()
+  async function initModel() {
+    document.getElementById("submit").innerText = "模型初始化中..."
+    window.model = await tf.loadLayersModel(window.location.href + 'dist/model.json');
+    init = false;
+    document.getElementById("submit").innerText = "识别"
+  }
+  initModel()
+})()

@@ -90,7 +90,7 @@ const devServer = {
   open: true,
   hot: false,
   disableHostCheck: true,
-  host: 'localhost',
+  host: '0.0.0.0',
   port: 9030,
   historyApiFallback: false,
   proxy: {
